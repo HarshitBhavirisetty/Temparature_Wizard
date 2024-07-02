@@ -5,51 +5,95 @@ body {
     align-items: center;
     min-height: 100vh;
     background: linear-gradient(90deg, rgba(93, 99, 204, 1) 0%, rgba(245, 240, 242, 1) 100%, rgba(0, 212, 255, 1) 100%);
-    font-family: monospace, sans-serif;
-    color: #0d5370;
+    font-family: 'Times New Roman', Times, serif;
+    color: #333;
 }
 
 .container {
-    background: rgba(0, 212, 255, 0.3);
+    background: rgba(255, 255, 255, 0.9);
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     width: 85%;
     max-width: 800px;
     min-height: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    animation: flipIn 1s ease-in-out;
 }
 
 .heading {
-    font-size: 32px;
+    font-size: 36px;
+    color: #5d63cc;
+    animation: slideDown 1s ease-in-out;
 }
 
 .temp-container {
     width: 100%;
     padding: 15px;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 20px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    animation: fadeInUp 1s ease-in-out;
 }
 
 input {
     width: 60%;
-    font-family: monospace;
-    padding: 5px;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px;
     outline: none;
-    background: rgba(0, 212, 255, 0.3);
-    border-color: rgba(255, 255, 255, 0.6);
-    color: darkblue;
+    background: rgba(93, 99, 204, 0.1);
+    border: 2px solid rgba(93, 99, 204, 0.5);
+    border-radius: 5px;
+    color: #333;
     font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: #5d63cc;
 }
 
 input::placeholder {
-    color: crimson;
+    color: #ccc;
+}
+
+/* Keyframes for animations */
+@keyframes flipIn {
+    from {
+        transform: rotateY(90deg);
+        opacity: 0;
+    }
+    to {
+        transform: rotateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 /* Responsive CSS */
@@ -72,3 +116,4 @@ input::placeholder {
         width: 40%;
     }
 }
+
